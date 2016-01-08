@@ -2,14 +2,18 @@ var React = require('react');
 
 var Autocomplete = React.createClass({
   getInitialState: function () {
-
+    return { query: "" }
   },
+
   render: function() {
-    // var input = <input type='text'>
-    // var ul = <ul>
     return (
       <div>
-        autocomplete goes here
+        <input/>
+        <ul>
+          <li>
+            items go here
+          </li>
+        </ul>
       </div>
     );
   }
