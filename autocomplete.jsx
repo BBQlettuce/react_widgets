@@ -10,6 +10,14 @@ var Autocomplete = React.createClass({
     // return list of names that match the query
   },
 
+  onQueryChange: function() {
+
+  },
+
+  onNameClick: function() {
+
+  },
+  
   render: function() {
     var matchedNames = this.matchedNames();
     var lis = [];

@@ -8,7 +8,8 @@ var names = [
   "Eli",
   "Nozomi",
   "Umi",
-  "Maki"
+  "Maki",
+  "Rin"
 ]
 
 var Widgets = React.createClass({
