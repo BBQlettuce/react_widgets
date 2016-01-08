@@ -1,7 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var Autocomplete = require('./autocomplete.jsx')
+var Autocomplete = require('./autocomplete.jsx');
+
 var names = [
   "Nico",
   "Eli",
@@ -13,7 +14,9 @@ var names = [
 var Widgets = React.createClass({
   render: function() {
     return(
-      <div>widget goes here</div>
+      <div>
+        <Autocomplete/>
+      </div>
     );
   }
 });
