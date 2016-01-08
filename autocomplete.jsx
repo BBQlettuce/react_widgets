@@ -5,13 +5,13 @@ var Autocomplete = React.createClass({
 
   },
   render: function() {
-    var input = <input type='text'>
-    var ul = <ul>
+    // var input = <input type='text'>
+    // var ul = <ul>
     return (
       <div>
         autocomplete goes here
       </div>
-    )
+    );
   }
 
 })

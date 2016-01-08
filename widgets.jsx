@@ -14,7 +14,7 @@ var names = [
 var Widgets = React.createClass({
   render: function() {
     return(
-      <div>
+      <div>asdf
         <Autocomplete/>
       </div>
     );
@@ -22,5 +22,5 @@ var Widgets = React.createClass({
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  ReactDOM.render(<Widgets />, document.getElementById('main'));
+  ReactDOM.render(<Widgets />, document.getElementById("root"));
 });
