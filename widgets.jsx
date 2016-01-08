@@ -15,7 +15,7 @@ var Widgets = React.createClass({
   render: function() {
     return(
       <div>asdf
-        <Autocomplete/>
+        <Autocomplete names={names}/>
       </div>
     );
   }
