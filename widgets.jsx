@@ -2,6 +2,10 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 var Autocomplete = require('./autocomplete.jsx');
+var Weatherclock = require('./weatherclock.jsx');
+// clock and weather separate?
+var Clock = Weatherclock.Clock;
+var Weather = Weatherclock.Weather;
 
 var names = [
   "Nico",
@@ -18,6 +22,10 @@ var Widgets = React.createClass({
       <div>
         <h4>Autocomplete</h4>
         <Autocomplete names={names}/>
+      </div>
+
+      <div>
+        <h4>Weatherclock</h4>
       </div>
     );
   }
