@@ -11,16 +11,16 @@ var Autocomplete = React.createClass({
     var query = this.state.query;
     // if name begins with this.state.query, then add to output
     var output = names.filter(function(name) {
-      name.startsWith(query);
+      return (name.toLowerCase()).startsWith(query.toLowerCase());
     });
     return output;
   },
 
-  onQueryChange: function() {
-
+  handleQueryChange: function(event) {
+    this.setState({ query: event.currentTarget.value });
   },
 
-  onNameClick: function() {
+  handleNameClick: function() {
 
   },
 
@@ -34,7 +34,7 @@ var Autocomplete = React.createClass({
 
     return (
       <div>
-        <input/>
+        <input onChange={this.handleQueryChange} value={this.state.query}/>
         <ul>
           {lis}
         </ul>
