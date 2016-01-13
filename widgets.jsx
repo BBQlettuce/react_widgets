@@ -16,7 +16,7 @@ var Widgets = React.createClass({
   render: function() {
     return(
       <div>
-        <h6>Autocomplete here</h6>
+        <h4>Autocomplete</h4>
         <Autocomplete names={names}/>
       </div>
     );

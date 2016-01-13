@@ -7,10 +7,12 @@ var Autocomplete = React.createClass({
 
   matchedNames: function () {
     // return list of names that match the query
-    var names = this.props.names;
     var query = this.state.query;
-    // if name begins with this.state.query, then add to output
-    var output = names.filter(function(name) {
+    if (query.length === 0) {
+      return [];
+    }
+    // var names = this.props.names;
+    var output = this.props.names.filter(function(name) {
       return (name.toLowerCase()).startsWith(query.toLowerCase());
     });
     return output;
@@ -20,8 +22,8 @@ var Autocomplete = React.createClass({
     this.setState({ query: event.currentTarget.value });
   },
 
-  handleNameClick: function() {
-
+  handleNameClick: function(event) {
+    this.setState({ query: event.currentTarget.innerText });
   },
 
   render: function() {
@@ -29,7 +31,7 @@ var Autocomplete = React.createClass({
     var lis = [];
     for (var i = 0; i < matchedNames.length; i++) {
       var name = matchedNames[i];
-      lis.push(<li key={i}>{name}</li>)
+      lis.push(<li key={i} onClick={this.handleNameClick}>{name}</li>)
     }
 
     return (
