@@ -6,8 +6,14 @@ var Autocomplete = React.createClass({
   },
 
   matchedNames: function () {
-    return (this.props.names)
     // return list of names that match the query
+    var names = this.props.names;
+    var query = this.state.query;
+    // if name begins with this.state.query, then add to output
+    var output = names.filter(function(name) {
+      name.startsWith(query);
+    });
+    return output;
   },
 
   onQueryChange: function() {
@@ -17,7 +23,7 @@ var Autocomplete = React.createClass({
   onNameClick: function() {
 
   },
-  
+
   render: function() {
     var matchedNames = this.matchedNames();
     var lis = [];
