@@ -22,10 +22,9 @@ var Widgets = React.createClass({
       <div>
         <h4>Autocomplete</h4>
         <Autocomplete names={names}/>
-      </div>
-
-      <div>
+        <br/>
         <h4>Weatherclock</h4>
+        <Clock/>
       </div>
     );
   }
