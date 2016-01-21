@@ -49,7 +49,7 @@ var Weather = React.createClass({
             location: resp.name,
             weather: resp.weather[0].description
           })
-          console.log(resp);
+          // console.log(resp);
         }
         else {
           console.log("you dun goofed");

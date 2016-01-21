@@ -20,12 +20,11 @@ var Widgets = React.createClass({
   render: function() {
     return(
       <div>
-        <h4>Autocomplete</h4>
+        <h3>Autocomplete</h3>
         <Autocomplete names={names}/>
         <br/>
-        <h4>Weatherclock</h4>
+        <h3>Weatherclock</h3>
         <Clock/>
-        <br/>
         <Weather/>
       </div>
     );
