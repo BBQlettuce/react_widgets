@@ -6,6 +6,7 @@ var Weatherclock = require('./weatherclock.jsx');
 // clock and weather separate?
 var Clock = Weatherclock.Clock;
 var Weather = Weatherclock.Weather;
+var Tabs = require('./tabs.jsx');
 
 var names = [
   "Nico",
@@ -16,6 +17,12 @@ var names = [
   "Rin"
 ]
 
+var tabItems = [
+  {title: "Tab1", content: "tab1 contents"},
+  {title: "Tab2", content: "tab2 contents"},
+  {title: "Tab3", content: "tab3 contents"}
+]
+
 var Widgets = React.createClass({
   render: function() {
     return(
@@ -23,9 +30,14 @@ var Widgets = React.createClass({
         <h3>Autocomplete</h3>
         <Autocomplete names={names}/>
         <br/>
+
         <h3>Weatherclock</h3>
         <Clock/>
         <Weather/>
+        <br/>
+
+        <h3>Tabs</h3>
+        <Tabs/>
       </div>
     );
   }
