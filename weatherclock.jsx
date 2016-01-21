@@ -26,7 +26,10 @@ var Clock = React.createClass({
 
 var Weather = React.createClass({
   getInitialState: function() {
-    return( { location: "No location found" } );
+    return({
+      location: "No location found",
+      weather: "No weather info"
+    });
   },
 
   componentDidMount: function() {
@@ -36,11 +39,24 @@ var Weather = React.createClass({
       // that.setState({location: pos.coords});
       var lat = pos.coords.latitude;
       var long = pos.coords.longitude;
-      var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long
+      var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&APPID=645c5d39c7603f17e23fcaffcea1a3c1"
       var req = new XMLHttpRequest();
-
-
-      console.log(url);
+      req.open('GET', url, true);
+      req.onload = function() {
+        if (req.status >= 200 && req.status < 400) {
+          var resp = JSON.parse(req.responseText);
+          that.setState({
+            location: resp.name,
+            weather: resp.weather[0].description
+          })
+          console.log(resp);
+        }
+        else {
+          console.log("you dun goofed");
+        }
+      }
+      req.send();
+      // console.log(url);
     };
     var error = function(err) {
       console.log(err.message);
@@ -50,7 +66,10 @@ var Weather = React.createClass({
 
   render: function() {
     return(
-      <div>{this.state.location}</div>
+      <div>
+        <p> Location: {this.state.location} </p>
+        <p> Weather: {this.state.weather} </p>
+      </div>
     );
   }
 });
