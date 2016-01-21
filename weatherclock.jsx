@@ -26,7 +26,7 @@ var Clock = React.createClass({
 
 var Weather = React.createClass({
   getInitialState: function() {
-    return( { location: null } );
+    return( { location: "No location found" } );
   },
 
   componentDidMount: function() {
@@ -34,7 +34,13 @@ var Weather = React.createClass({
     var geo = navigator.geolocation;
     var success = function(pos) {
       // that.setState({location: pos.coords});
-      console.log(pos.coords);
+      var lat = pos.coords.latitude;
+      var long = pos.coords.longitude;
+      var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long
+      var req = new XMLHttpRequest();
+
+
+      console.log(url);
     };
     var error = function(err) {
       console.log(err.message);
