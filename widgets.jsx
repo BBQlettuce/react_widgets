@@ -25,6 +25,8 @@ var Widgets = React.createClass({
         <br/>
         <h4>Weatherclock</h4>
         <Clock/>
+        <br/>
+        <Weather/>
       </div>
     );
   }

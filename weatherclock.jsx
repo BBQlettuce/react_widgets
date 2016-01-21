@@ -26,11 +26,26 @@ var Clock = React.createClass({
 
 var Weather = React.createClass({
   getInitialState: function() {
+    return( { location: null } );
+  },
 
+  componentDidMount: function() {
+    var that = this;
+    var geo = navigator.geolocation;
+    var success = function(pos) {
+      // that.setState({location: pos.coords});
+      console.log(pos.coords);
+    };
+    var error = function(err) {
+      console.log(err.message);
+    };
+    geo.getCurrentPosition(success, error);
   },
 
   render: function() {
-
+    return(
+      <div>{this.state.location}</div>
+    );
   }
 });
 
