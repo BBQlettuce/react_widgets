@@ -37,7 +37,7 @@ var Widgets = React.createClass({
         <br/>
 
         <h3>Tabs</h3>
-        <Tabs/>
+        <Tabs tabItems={tabItems}/>
       </div>
     );
   }

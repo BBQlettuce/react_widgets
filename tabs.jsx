@@ -8,9 +8,17 @@ var Tabs = React.createClass({
   },
 
   render: function() {
+    var tabs = this.props.tabItems.map(function(tab) {
+      return (
+        <li>{tab.title}</li>
+      )
+    });
+    var art = this.props.tabItems[this.state.selectedTabIndex].content;
+
     return (
       <div>
-        tabs go here
+        <ul>{tabs}</ul>
+        <article>{art}</article>
       </div>
     )
   }
